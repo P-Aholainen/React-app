@@ -61,7 +61,7 @@ class Lyrics extends Component {
                         </li>
 
                         <li>
-                            <strong>Explicit</strong>:{' '}{track.explicit===0? 'Bitch please...' : 'Fuck yeah!!'}
+                            <strong>Explicit</strong>:{' '}{track.explicit===0? 'Pfff...No' : 'Hell yes!!'}
                         </li>
 
                         <li>

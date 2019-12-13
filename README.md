@@ -1,68 +1,15 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Api -kutsujen tekemiseen on käytetty Axios http client -laajennusta.
 
-## Available Scripts
+API -rajapinnan tarjoaa Musixmatch.com
 
-In the project directory, you can run:
+Komponentit on lajiteltu omiin kansioihin, sillä periaatteella, että layout -kansioon on sijoitettu ulkoasulliset komponentit ja tracks -kansioon komponentit, joissa suoritetaan API -kutsut ja määritellään miten data esitetään.
 
-### `npm start`
+Ulkoasun määrittämiseen on käytetty Bootstrap CSS:ää, eikä App.css tiedostossa ole määritetty kuin taustaväri.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Context.js tiedostossa tuodaan käyttöön Context API, jolla voidaan komponenttien välillä jakaa ns. globaalia dataa Provider ja Consumer komponenttien avulla, ilman, että sitä tarvitsee välittää eteenpäin propsien avulla. Eli Context.js tiedostossa määritetään Provider -komponentti, joka välitetään Consumer -komponenttiin, jota käytetään Tracks.js ja Search.js tiedostoissa.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Päätiedostona toimii App.js jossa palautetaan komponentit, ja suoritetaan routtaus, kun tuodaan hakutuloksia oletuksena tuotavien TOP10 -tulosten tilalle.
 
-### `npm test`
+API avain on piilotettu .env -tiedostoon, ja ko. tiedosto on lisätty gitignore -listaan, jotta avaimet eivät näy githubissa.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Applikaatio pohjautuu Traversy Median Tutorial videoon, josta joitain ominaisuuksia on jätetty pois, ja jotain tuotu lisää kuten esimerkiksi mahdollisuus tehdä haku samaan aikaan sekä artistin, että kappaleen tiedoilla. Myös ulkoasua on muokattu. Spinner.gif on ladattu preloader.net sivustolta, jossa se on ensin muokattu värimaailmaan sopivaksi
